@@ -1,0 +1,29 @@
+* How to use the API?
+
+  * Change the APPID in geo.erl
+  * application:start(inets)
+  * geo:woeid_query( "Sunnyvale" )
+     * Return place info for the query result
+
+* How to get the place info for given woeid?
+
+   * geo:woeid( "2502265" ).
+
+* How to get the ancestors for given woeid?
+
+   * geo:woeid( "2502265", ancestors).
+
+* What is the result format
+  * Each place result is of the following format
+
+{place, [{woeid, string()},
+         {latitude, string()},
+         {longitude, string()},
+         {place_type, string()},
+         {place_name, string()}]}.
+
+
+* To Do
+
+  * Make it proper geo_app
+  * Add caching layer using ets table
